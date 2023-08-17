@@ -1,5 +1,7 @@
 package com.oogwayapps.branchthreads.screens
 
+import android.app.Activity
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -79,6 +81,12 @@ fun MessageThreadItem(thread: MappedThreadMessages, onThreadClicked: (MappedThre
         Spacer(modifier = Modifier.width(16.dp))
 
         Icon(imageVector = Icons.Default.ArrowForward, contentDescription = null)
+    }
+
+    val context = LocalContext.current as Activity
+
+    BackHandler() {
+        context.finish()
     }
 }
 

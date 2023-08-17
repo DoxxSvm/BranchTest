@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
 fun App(){
     val navController = rememberNavController()
     val threadViewModel : ThreadViewModel = viewModel()
-    NavHost(navController = navController, startDestination = "ThreadList"){
+    NavHost(navController = navController, startDestination = "Login"){
         composable(route = "Login"){
             LoginScreen(threadViewModel){
                 navController.navigate("ThreadList")

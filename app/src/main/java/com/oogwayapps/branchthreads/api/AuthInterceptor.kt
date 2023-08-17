@@ -12,7 +12,7 @@ class AuthInterceptor @Inject constructor(private val tokenManager: TokenManager
         val request =chain.request().newBuilder()
         val token = tokenManager.getAuthToken()
         if (token != null) {
-            request.addHeader("X-Branch-Auth-Token","BCGLnkQaOeMd7RP_yuTDuw")
+            request.addHeader("X-Branch-Auth-Token",token)
         }
         return chain.proceed(request.build())
     }
